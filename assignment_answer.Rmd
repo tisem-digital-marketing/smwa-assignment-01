@@ -1,0 +1,264 @@
+---
+title: "Assignment answers"
+author: "Group Name"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+duedate: "17th of May, 2021"
+duetime: "23:59 CEST"
+output: html_document
+---
+
+
+\hrulefill
+
+## Instructions
+
+This group assignment is due on the **`r rmarkdown::metadata$duedate`** at **`r rmarkdown::metadata$duetime`**.
+
+Solutions will be turned in via GitHub Classroom.
+<!-- ^[ -->
+<!--   Review the [tutorial](INSERT_LINK) for how to accept the group assignment from GitHub. -->
+<!-- ] -->
+**Only most recent commit on the main branch of the online GitHub repository when the assignment is due will be graded**.
+Your solution must use the `Rmarkdown` template provided in the assignment's repository that you cloned for this assignment. 
+This means your answers will be compiled into a file called `assignment_answers.html` when you use the 'Knit' button in RStudio.
+Failure to follow these steps and submit `assignment_answers.html` in your GitHub repository along with the `assignment_answers.Rmd`, will result in a assignment grade of **zero**.
+Refer to the repository's `README.md` for instructions on how to complete the title and author fields for submission.
+
+Each group has been assigned a **group leader**.
+It is the group leaders job to "accept" the assignment via GitHub and then add all group members as collaborators to the group assignment. 
+To do this, the group leader will need each member's GitHub username.
+The group leader can add group members as follows:
+
+- Go to their group assignment repository on GitHub
+- Click on the Settings tab
+- Go to 'Manage Access'
+- Click on 'Invite teams or people'
+- Enter the GitHub usernames of each group member, one by one, and give them 'Write' access
+- Click 'Add <username> to this repository'
+
+Group members will then get an email to accept this invitation.
+Group members **must accept** this invitation to be able to view and contribute to the assignment.
+
+To work on this assignment, first clone the GitHub repository to your machine, see the `README.md` for more details.
+After you have cloned the repository to your machine, you can download the data for this assignment.
+Open an RStudio session and use this folder as a project.
+The data is downloaded to the `data` sub-directory by running the R script '`data/download_data.R`'.
+When you run this script you will be asked to log in to your Google account to access the data, follow the instructions in the console to get proceed to get access.
+Be sure to install all the necessary packages so that your solution document will run from start to finish.
+
+Remember, your goal is to communicate. 
+Full credit will be given only to the correct solution which is described and/or coded clearly. 
+Convoluted and obtuse descriptions/code might receive low marks, even when they are correct. 
+Aim for concise solutions, as it will save you time spent on write-ups, and also help you conceptualize the key ideas you are trying to express.
+Sentence limits often apply to questions that require written answers - stick to them (or under them) to get full credit.
+
+\medskip
+
+\hrulefill
+
+## Causal Analytics: Online Reputation Management
+
+This exercise studies online reputation management through the use of public comments by firms in response to online reviews.
+The content is based on the article "Online reputation management: 
+ Estimating the impact of management responses on consumer reviews" by Proserpio and Zervas.
+ The article is published in Marketing Science in 2017, and is available in our course readings.
+You should read through the article before answering these questions.
+The paper wants to investigate the relationship between a hotel's use of management responses and its online reputation (measured by star rating, `stars`) & establish a causal relationship from the use of management responses to online reputation.
+Your goal in this exercise is to explain key arguments and replicate selected results from this paper.
+The data for this exercise is located `data/management-responses/responses.dta`.^[
+The data is available here *after* you have run the `data/download_data.R` script to download the data to your computer.
+Note that the data is stored as a `.dta` format (i.e. a Stata dataset).
+We use the package `haven` with its `read_stata()` command to load a Stata dataset.
+]
+
+For this exercise you might need to the following packages:
+
+```{r, warning= FALSE, message=FALSE}
+library(haven)
+library(dplyr)
+library(tidyr)
+library(fixest)
+library(purrr)
+library(broom)
+library(modelsummary)
+```
+
+1. Explain why firms might use public responses to reviews to manage their online reputation.
+   Should they respond relatively more to positive or negative reviews? Explain why.
+
+**Write your answer here**
+
+2. Load the data for this exercise and name it `hotels_orm`. 
+For this exercise you will only need a the rows where `xplatform_dd_obs = 1`.
+Keep only the columns `hotel_id, year, stars, after, ta_dummy, first_response, cum_avg_stars_lag, log_count_reviews_lag, ta_dummy, t, ash_interval, traveler_type`.
+
+```{r}
+# Write your answer here
+```
+
+
+
+3. Proserpio & Zervas' empirical exercise uses what they call 'cross-platform' difference in differences.
+Using your own words, explain their idea conceptually - and justify why it is valid. 
+You can use equations or figures, but do so sparingly. (max 7 sentences).
+
+4. Explain what the 'parallel trends' assumption is. 
+   Why is it important in this application?
+   Which figure (if any) provides support for the parallel trends assumption?
+
+**Write your answer here**
+
+5. What is the 'Ashenfelter dip'? 
+   Why do Proserpio & Zervas believe they see a pattern akin to an Ashenfelter dip in their application?
+
+**Write your answer here**
+
+6. Let's compute the 'simple' Difference in Difference estimate using differences in means.
+  (a) Create a data frame with two rows and two columns where the rows take the values of after = 0 or 1, 
+      and the columns take the values of ta_dummy = 0 or 1. 
+      The values in the data frame should be the respective group means of `stars`.
+  (b) Compute the difference between after = 1 and after = 0 for each of ta_dummy = 0 and ta_dummy = 1.
+  (c) Compute the difference between the two values in (b) to get your simple DiD estimate.
+      What is the estimate that you get?
+
+```{r}
+# Write your answer here
+```
+
+
+The authors use the following regression equation to estimate the difference in difference estimator of the effect of online responses on online reputation:
+
+$Stars_{ijt} = \beta_1 After_{ijt} + \beta_2 TripAdvisor_{ij} + \delta After_{ijt}  \times TripAdvisor_{ij} + X_{ijt}\gamma + \alpha_j + \tau_t + \varepsilon_{ijt}$
+
+where $Stars_{ijt}$ is the star-rating of review $i$ for hotel $j$ in calendar month $t$, $After_{ijt}$ is an indicator
+for reviews (on either platform) submitted after hotel $j$ started responding, $TripAdvisor_{ij}$ is an
+indicator for TripAdvisor ratings, $X_{ijt}$ are control variables, $\alpha_j$ are hotel fixed effects, $\tau$ are calendar-month fixed effects
+and $\varepsilon_{ijt}$ is the error term.
+
+To relationship between the variables in the equation above and the variables in the dataset is:^[
+  This mapping is *not* immediately obvious, and one of the (small) perils of using a dataset that one hasn't constructed themselves from scratch. We hope this clarifies which variables need to be included in the regression.
+]
+
+* $After =$ `first_reponse`, 
+* $TripAdvisor =$ `ta_dummy`, and 
+* $After_{ijt}  \times TripAdvisor_{ij}$ = `after`
+
+7. Explain why $\delta$, i.e. the coefficient for the interaction term $After_{ijt} \times TripAdvisor_{ij}$ is the difference in difference estimate from the regression (i.e. the coefficient you want to estimate).
+
+**Write your answer here**
+
+8. Now, lets replicate Table 4 of Proserpio and Zervas. 
+  Estimate the model outlined above using the `fixest` package.
+  In particular, produce three regression models:
+
+  (a) `model_1` should be the regression equivalent of the simple DiD in 6 using the whole dataset. This estimate is not in Table 4 of Proserpio and Zervas.
+  (b) `model_2` should extend `model_1` by adding the fixed effects and uses the whole dataset.
+  (c) `model_3` should be the same estimating equation as `model_2` but correct for the Ashenfelter dip.
+  (d) `model_4` should augment `model_2` by adding the variables `cum_avg_stars_lag` and `log_count_reviews_lag` to $X_{ijt}$, and correct for the Ashenfelter dip.
+
+For each model, standard errors should be clustered by `hotel_id`.
+
+Use the following starter code for estimating each regression model:
+
+```{r, eval = FALSE}
+model_x <- fixest(YOUR_CODE ~ YOUR_CODE + 
+                    # t:ta_dummy is the platform specific linear time 
+                    # trend they mention in the notes of table 4
+                    # you need this to get their estimates in models 2 thru 4
+                    t:ta_dummy
+                    |
+                    # here's the fixed effects (if you need them)
+                    t + hotel_id,
+                    data = YOUR_CODE,
+                    cluster = ~ YOUR_CODE # what variable denotes the clusters 
+                                          # for the standard errors
+                    )
+```
+
+
+```{r}
+# Write your answer here
+```
+
+
+9. Report your estimates.
+
+```{r}
+# Write your answer here
+```
+
+
+10. Interpret the value of the coefficients you deem most important. 
+    Are these effects significant from a marketing perspective (i.e. Should they shape marketing practice)? (max. 7 sentences)
+
+**Write your answer here**
+
+
+11. Explain why management responses to reviews can lead to improved hotel ratings. 
+  Can you support this argument using any of the results in Proserpio and Zervas' work? 
+  Be specific as to which results you can use and how they support your arguments. (max. 10 sentences).
+
+**Write your answer here**
+
+12. Given the results, explain the costs and benefits of management responses from the perspective of business managers, review platforms and consumers. 
+(max 10 sentences). 
+
+**Write your answer here**
+
+The effect we found above might have different magnitudes for different types of travellers.
+The Proserpio and Zervas data includes information on the type of travel for some rows of data for the years 2009 and after.
+In Table 5 they present results across different traveler types.
+We will try and replicate their findings.
+
+**Note:** The questions from here onward are a less guided and therefore might be more difficult than the previous ones.
+They are designed to challenge the more analytics minded students.
+
+13. Create a new dataset `hotels_orm_tt` that selects the rows from `hotels_orm` where the year is 2009 or later and the `traveller_type` is not missing.
+Also drop observations where `ash_interval` is not zero, so that we remove observations where the Ashenfelter dip may occur.
+
+```{r}
+# Write your answer here
+```
+
+
+
+The variable `traveler_type` takes one of 5 numeric values, and it's unclear which is which without further information.
+Run the following code to attach labels to traveler types:
+
+```{r}
+# uncomment this code when you arrive at this point
+# of the assignment
+# hotels_orm_tt <-
+#   hotels_orm_tt %>%
+#   # remove travel type 'other'
+#   filter(traveler_type != 5) %>%
+#   # add readable labels to the remaining factors
+#   mutate(traveler_type = factor(traveler_type, 
+#                                 labels = c("Business", #1
+#                                            "Couples",  #2
+#                                            "Families", #3
+#                                            "Friends"   #4
+#                                            )
+#                                 ) 
+#          )
+```
+
+14. Estimate the regression models to replicate Table 5 of Proserpio and Zervas. You should use your answers to (8) as a starting point for the code.
+
+```{r}
+# Write your answer here
+```
+
+
+15. Present your regression estimates in a regression table. 
+Your final answer should resemble Table 5 in the paper, but you do not need to match it precisely.
+
+```{r}
+# Write your answer here
+```
+
+
+16. Do you find significant differences in the estimates across travel types?
+Can you explain why these differences may or may not be present? (max. 7 sentences)
+
+**Write your answer here**
