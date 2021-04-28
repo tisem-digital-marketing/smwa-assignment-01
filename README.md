@@ -34,12 +34,12 @@ This package will count the number of word in your proposal, and we use this num
 
 ## Grading Information
 
-* Due Date: **May 14, 2021 at 23:59 pm**
+* Due Date: **May 17, 2021 at 23:59 pm**
 
 Submission is via GitHub Classroom.
-Your most recent commit that is on the `main` branch before the due date will be graded.
+Your most recent commit that is on the `main` branch that is available online on GitHub before the due date will be graded.
 
-**You must include a html file "assignment_answers.html" in the repository by the submission deadline**
+**You must include a html file "assignment_answers.html" in the GitHub repository by the submission deadline**
 
 ## Template Meta-Information
 
@@ -51,7 +51,7 @@ Your most recent commit that is on the `main` branch before the due date will be
 
 ### Suggested Citation
 
-```
+```bash
 Lachlan Deer, 2021, Group Assignment 1 Template, Social Media and Web Analytics, TiSEM
 ```
 
