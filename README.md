@@ -58,7 +58,7 @@ Your most recent commit that is on the `main` branch that is available online on
 *   Template Maintainer: Lachlan Deer (`@lachlandeer`)
 *   Course: [Social Media and Web Analytics](https://github.com/tisem-social-media)
 *   Institute: [Dept of Marketing, TiSEM](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing)
-*   Template Link: [click here](https://github.com/tisem-digital-marketing/project-milestone-01)
+*   Template Link: [click here](https://github.com/tisem-digital-marketing/smwa-assignment-01)
 *   Current Version: [Spring 2021](https://tisem-digital-marketing.github.io/2021-smwa/)
 
 ### Suggested Citation
