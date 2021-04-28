@@ -7,21 +7,16 @@ duetime: "23:59 CEST"
 output: html_document
 ---
 
-
-\hrulefill
-
 ## Instructions
 
 This group assignment is due on the **`r rmarkdown::metadata$duedate`** at **`r rmarkdown::metadata$duetime`**.
 
 Solutions will be turned in via GitHub Classroom.
-<!-- ^[ -->
-<!--   Review the [tutorial](INSERT_LINK) for how to accept the group assignment from GitHub. -->
-<!-- ] -->
+
 **Only most recent commit on the main branch of the online GitHub repository when the assignment is due will be graded**.
 Your solution must use the `Rmarkdown` template provided in the assignment's repository that you cloned for this assignment. 
 This means your answers will be compiled into a file called `assignment_answers.html` when you use the 'Knit' button in RStudio.
-Failure to follow these steps and submit `assignment_answers.html` in your GitHub repository along with the `assignment_answers.Rmd`, will result in a assignment grade of **zero**.
+Failure to follow these steps and submit `assignment_answer.html` in your GitHub repository along with the `assignment_answer.Rmd`, will result in a assignment grade of **zero**.
 Refer to the repository's `README.md` for instructions on how to complete the title and author fields for submission.
 
 Each group has been assigned a **group leader**.
@@ -51,10 +46,6 @@ Full credit will be given only to the correct solution which is described and/or
 Convoluted and obtuse descriptions/code might receive low marks, even when they are correct. 
 Aim for concise solutions, as it will save you time spent on write-ups, and also help you conceptualize the key ideas you are trying to express.
 Sentence limits often apply to questions that require written answers - stick to them (or under them) to get full credit.
-
-\medskip
-
-\hrulefill
 
 ## Causal Analytics: Online Reputation Management
 
