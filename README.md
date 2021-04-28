@@ -21,9 +21,8 @@ Check the [course syllabus](https://tisem-digital-marketing.github.io/2021-smwa/
 
 **Only most recent commit on the main branch of the online GitHub repository when the assignment is due will be graded**.
 Your solution must use the `Rmarkdown` template provided in the assignment's repository that you cloned for this assignment. 
-This means your answers will be compiled into a file called `assignment_answers.pdf`.
-Failure to follow these steps and submit `assignment_answers.pdf` in your GitHub repository along with the `assignment_answers.Rmd`, will result in a assignment grade of **zero**.
-Refer to the repository's `README.md` for instructions on how to complete the title and author fields for submission.
+This means your answers will be compiled into a file called `assignment_answers.html` when you use the 'Knit' button in RStudio.
+Failure to follow these steps and submit `assignment_answers.html` in your GitHub repository along with the `assignment_answers.Rmd`, will result in a assignment grade of **zero**.
 
 Each group has been assigned a **group leader**.
 It is the group leaders job to "accept" the assignment via GitHub and then add all group members as collaborators to the group assignment. 
