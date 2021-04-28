@@ -15,23 +15,32 @@ Check the [course syllabus](https://tisem-digital-marketing.github.io/2021-smwa/
 
 ## Instructions for Students
 
-1. The "Group Leader" needs to accept the assignment invitation on GitHub. The link to do this is on the course website.
-2. The "Group Leader" adds their group members to the repository on GitHub.
-  * Click Settings, then go to the Manage Access tab.
-  * Click "Invite Teams or people"
-  * 
-3. Clone the repository to your machine.
-4. Update the meta-information above.
-5. Install the `wordcountaddin` package by entering the following into your RStudio console:
-```{r}
-devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
-```
-This package will count the number of word in your proposal, and we use this number to verify you meet the assignment length constraints
-5. Complete the your project proposal using `proposal.Rmd`
-  * Use the template "as-is", do not modify headings, fonts, font-sizes etc.
-  * The word limit is **500 words**. This is an upper bound, you can do it in less and are encouraged to.
-6. Complete the `data/download_data.R` script to download the data that your final project will use.
+**Only most recent commit on the main branch of the online GitHub repository when the assignment is due will be graded**.
+Your solution must use the `Rmarkdown` template provided in the assignment's repository that you cloned for this assignment. 
+This means your answers will be compiled into a file called `assignment_answers.pdf`.
+Failure to follow these steps and submit `assignment_answers.pdf` in your GitHub repository along with the `assignment_answers.Rmd`, will result in a assignment grade of **zero**.
+Refer to the repository's `README.md` for instructions on how to complete the title and author fields for submission.
 
+Each group has been assigned a **group leader**.
+It is the group leaders job to "accept" the assignment via GitHub and then add all group members as collaborators to the group assignment. 
+To do this, the group leader will need each member's GitHub username.
+The group leader can add group members as follows:
+
+- Go to their group assignment repository on GitHub
+- Click on the Settings tab
+- Go to 'Manage Access'
+- Click on 'Invite teams or people'
+- Enter the GitHub usernames of each group member, one by one, and give them 'Write' access
+- Click 'Add <username> to this repository'
+
+Group members will then get an email to accept this invitation.
+Group members **must accept** this invitation to be able to view and contribute to the assignment.
+
+To work on this assignment, first clone the GitHub repository to your machine, see the `README.md` for more details.
+After you have cloned the repository to your machine, you can download the data for this assignment.
+Open an RStudio session and use this folder as a project.
+The data is downloaded to the `data` sub-directory by running the R script '`data/download_data.R`'.
+When you run this script you will be asked to log in to your Google account to access the data, follow the instructions in the console to get proceed to get access.
 ## Grading Information
 
 * Due Date: **May 17, 2021 at 23:59 pm**
