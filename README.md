@@ -1,5 +1,9 @@
 # Group Assignment 1
 
+## Social Media and Web Analytics
+
+### Tilburg School of Economics and Marketing
+
 [![Template Lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Template Version](https://img.shields.io/badge/version-2021-green.svg)]()
 
