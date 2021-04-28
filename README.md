@@ -59,7 +59,20 @@ where you replace "TEAMNAME" with your group's team name.
 After you have cloned the repository to your machine, you can download the data for this assignment.
 Open an RStudio session and use this folder as a project.
 The data is downloaded to the `data` sub-directory by running the R script '`data/download_data.R`'.
-When you run this script you will be asked to log in to your Google account to access the data, follow the instructions in the console to get proceed to get access.
+When you run this script you will be asked to log in to your Google account to access the data, follow the instructions in the R console to get proceed to get access.
+
+Once the data is downloaded, work on the assignment by adding your answers to `assignment_answer.Rmd` where marked.
+Commit your changes periodically so that there is a record of the edits you are making.
+To make your edits available to the rest of the group, you will want to push your commits to the online repository.
+Do this with either: 
+
+```{bash}
+git push
+```
+
+from a terminal, or use the Git pane inside RStudio (top right corner) to push using the green "up" arrow.
+
+
 ## Template Meta-Information
 
 *   Template Maintainer: Lachlan Deer (`@lachlandeer`)
