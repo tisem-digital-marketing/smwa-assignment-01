@@ -17,6 +17,15 @@ Check the [course syllabus](https://tisem-digital-marketing.github.io/2021-smwa/
 * GitHub Handles: LIST GITHUB USERNAMES OF ALL GROUP MEMBERS
 * Group Leader: YOUR_NAME (YOUR_GH_USERNAME), i.e. "Lachlan Deer (@lachlandeer)"
 
+## Grading Information
+
+* Due Date: **May 17, 2021 at 23:59 pm**
+
+Submission is via GitHub Classroom.
+Your most recent commit that is on the `main` branch that is available online on GitHub before the due date will be graded.
+
+**You must include a html file "assignment_answers.html" in the GitHub repository by the submission deadline**
+
 ## Instructions for Students
 
 **Only most recent commit on the main branch of the online GitHub repository when the assignment is due will be graded**.
@@ -44,15 +53,6 @@ After you have cloned the repository to your machine, you can download the data 
 Open an RStudio session and use this folder as a project.
 The data is downloaded to the `data` sub-directory by running the R script '`data/download_data.R`'.
 When you run this script you will be asked to log in to your Google account to access the data, follow the instructions in the console to get proceed to get access.
-## Grading Information
-
-* Due Date: **May 17, 2021 at 23:59 pm**
-
-Submission is via GitHub Classroom.
-Your most recent commit that is on the `main` branch that is available online on GitHub before the due date will be graded.
-
-**You must include a html file "assignment_answers.html" in the GitHub repository by the submission deadline**
-
 ## Template Meta-Information
 
 *   Template Maintainer: Lachlan Deer (`@lachlandeer`)
