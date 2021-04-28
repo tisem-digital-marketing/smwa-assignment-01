@@ -70,7 +70,7 @@ Do this with either:
 git push
 ```
 
-from a terminal, or use the Git pane inside RStudio (top right corner) to push using the green "up" arrow.
+from a terminal when your working directory is this folder, **or** use the Git pane inside RStudio (top right corner) to push using the green "up" arrow.
 
 
 ## Template Meta-Information
